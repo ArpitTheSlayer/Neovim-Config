@@ -6,8 +6,6 @@ wk.register({
 	e = "Toggle explorer",
 	r = "Refresh lua files",
 	l = "Open lazy",
-	m = "Open mason",
-	t = "Open treesitter",
 	v = "Vertical split",
 	h = "Horizontal split",
 	f = {
@@ -16,6 +14,18 @@ wk.register({
 		g = "Live grep",
 		b = "Buffers",
 		h = "Help tags",
+	},
+	g = {
+		name = "Git",
+		l = "Toggle line blame",
+	},
+	b = {
+		name = "Buffer",
+		l = "Close all buffers to the left",
+		r = "Close all buffers to the right",
+		o = "Close other buffers",
+		p = "Pick buffer to open",
+		c = "Pick buffer to close",
 	},
 }, { prefix = "<leader>" })
 
