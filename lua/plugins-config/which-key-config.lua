@@ -17,7 +17,7 @@ wk.register({
 	},
 	g = {
 		name = "Git",
-		l = "Toggle line blame",
+		b = "Toggle line blame",
 	},
 	b = {
 		name = "Buffer",

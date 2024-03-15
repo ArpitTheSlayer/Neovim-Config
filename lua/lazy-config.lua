@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
+
 require("lazy").setup({
 	{
 		"williamboman/mason.nvim",
@@ -21,7 +23,6 @@ require("lazy").setup({
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 	},
 	{
 		"akinsho/bufferline.nvim",
@@ -41,11 +42,6 @@ require("lazy").setup({
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				-- config
-			})
-		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 	{
@@ -55,7 +51,6 @@ require("lazy").setup({
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		opts = {},
 		-- stylua: ignore
 		keys = {
 			{ "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
@@ -78,11 +73,6 @@ require("lazy").setup({
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -100,6 +90,36 @@ require("lazy").setup({
 	{
 		"lewis6991/gitsigns.nvim",
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"echasnovski/mini.nvim",
+		version = "*",
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = {
+					"help",
+					"alpha",
+					"dashboard",
+					"neo-tree",
+					"Trouble",
+					"trouble",
+					"lazy",
+					"mason",
+					"notify",
+					"toggleterm",
+					"lazyterm",
+				},
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
+	},
 })
-
-vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
