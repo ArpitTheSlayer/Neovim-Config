@@ -139,4 +139,7 @@ require("lazy").setup({
 			"rcarriga/nvim-notify",
 		},
 	},
+	{
+		"windwp/nvim-ts-autotag",
+	},
 })
