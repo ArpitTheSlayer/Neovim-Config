@@ -87,9 +87,6 @@ require("lazy").setup({
 		"hrsh7th/vim-vsnip",
 	},
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 	},
 	{
@@ -144,5 +141,8 @@ require("lazy").setup({
 	},
 	{
 		"tiagovla/scope.nvim",
+	},
+	{
+		"stevearc/conform.nvim",
 	},
 })
