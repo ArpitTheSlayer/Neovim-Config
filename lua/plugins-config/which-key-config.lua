@@ -18,6 +18,7 @@ wk.register({
 	g = {
 		name = "Git",
 		b = "Toggle line blame",
+		g = "Lazygit",
 	},
 	b = {
 		name = "Buffer",
@@ -27,6 +28,7 @@ wk.register({
 		p = "Pick buffer to open",
 		c = "Pick buffer to close",
 	},
+	t = "Open terminal",
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -36,4 +38,8 @@ wk.register({
 	["<C-l>"] = "Go to right window",
 	["<Tab>"] = "Go to next buffer",
 	["<S-Tab>"] = "Go to previous buffer",
+	["<left>"] = "Go to previous tab",
+	["<right>"] = "Go to next tab",
+	["<up>"] = "Create new tab",
+	["<down>"] = "Close current tab",
 })

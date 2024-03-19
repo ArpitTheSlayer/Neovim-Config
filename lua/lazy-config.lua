@@ -142,4 +142,7 @@ require("lazy").setup({
 	{
 		"RRethy/vim-illuminate",
 	},
+	{
+		"tiagovla/scope.nvim",
+	},
 })
